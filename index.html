@@ -153,17 +153,56 @@
             <div class="study-path">
               <div class="container-fluid">
                 <div class="row p-0">
-                  <div class="time-spending col-lg-6">
+                  <div class="time-spending col-lg-6 container-fluid">
+                    <div class="row">
+                      <div class="col-lg-9 fw-bold fs-3">
+                        Study Statistices
+                      </div>
+                      <div class="col-lg-3">
+                        <select name="cars" id="profile" class="p-2 shadow">
+                          <option value="volvo">Monthly</option>
+                          <option value="saab">Saab</option>
+                          <option value="mercedes">Mercedes</option>
+                          <option value="audi">Audi</option>
+                        </select>
+                      </div>
+                    </div>
                     <canvas
                       id="myChart"
                       style="width: 100%; max-width: 600px"
                     ></canvas>
 
                     <script>
-                      var xValues = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];;
-                      var yValues = [55, 49, 44, 24, 15,44,55,67,56,34,65,22];
+                      var xValues = [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                      ];
+                      var yValues = [
+                        55, 49, 44, 24, 15, 44, 55, 67, 56, 34, 65, 22,
+                      ];
                       var barColors = [
-                        "#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7"
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
+                        "#BBD9E7",
                       ];
 
                       new Chart("myChart", {
