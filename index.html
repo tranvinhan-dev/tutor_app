@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeTeach</title>
+    <!-- FONTAWWSOME -->
+    <script
+      src="https://kit.fontawesome.com/cb67f565f4.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- BOOTSTRAP CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -13,31 +18,190 @@
       crossorigin="anonymous"
     />
     <!-- css style -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="sidebar col-lg-3">this is side bar</div>
-        <div class="main col-lg-9">
-            <div class="search">this is search bar</div>
-          <div class="overview">this is overview</div>
-          <div class="study-path">
+        <div class="side-bar col-lg-3">this is side bar</div>
+        <div class="right-bar col-lg-9">
+          <div class="search">
             <div class="container-fluid">
-              <div class="row p-0">
-                <div class="time-spending col-lg-6">this is time spending</div>
-                <div class="upcoming col-lg-6">this is upcoming</div>
+              <div class="row p-2">
+                <div class="col-lg-10">
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fas fa-search"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search for course"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-2 m-auto d-flex">
+                  <div class="fs-4">
+                    <i class="far fa-bell"></i>
+                  </div>
+                  <select name="cars" id="profile" class="p-2">
+                    <option value="volvo">Avatar123</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <img src="img/avt1.png" alt="avt" class="img m-auto" />
+                </div>
               </div>
             </div>
           </div>
-          <div class="course">
-            <div class="container-fluid">
+          <div class="main p-4 rounded">
+            <div class="overview container-fluid">
+              <div class="row">
+                <div class="col-lg-11 fw-bold fs-3">Overview</div>
+                <div class="col-lg-1">
+                  <select name="cars" id="profile" class="p-2 shadow">
+                    <option value="volvo">Weekly</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex p-2">
+                <div class="rounded overview-comp container-fluid shadow">
+                  <div class="row overview-comp-title py-3 fw-bold">
+                    Course in progress
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 overview-comp-number">02</div>
+                    <div class="col-lg-6 overview-comp-image">
+                      <img
+                        src="img/icons8_combo_chart_96px.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded overview-comp container-fluid shadow">
+                  <div class="row overview-comp-title py-3 fw-bold">
+                    Course in progress
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 overview-comp-number">07</div>
+                    <div class="col-lg-6 overview-comp-image">
+                      <img
+                        src="img/icons8_checked_checkbox_96px.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded overview-comp container-fluid shadow">
+                  <div class="row overview-comp-title py-3 fw-bold">
+                    Course in progress
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 overview-comp-number">10h20m</div>
+                    <div class="col-lg-6 overview-comp-image">
+                      <img
+                        src="img/icons8_video_96px.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded overview-comp container-fluid shadow">
+                  <div class="row overview-comp-title py-3 fw-bold">
+                    Course in progress
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 overview-comp-number">05</div>
+                    <div class="col-lg-6 overview-comp-image">
+                      <img
+                        src="img/icons8_certificate_96px.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded overview-comp container-fluid shadow">
+                  <div class="row overview-comp-title py-3 fw-bold">
+                    Course in progress
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 overview-comp-number">670</div>
+                    <div class="col-lg-6 overview-comp-image">
+                      <img
+                        src="img/icons8_treasure_chest_96px.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="study-path">
+              <div class="container-fluid">
+                <div class="row p-0">
+                  <div class="time-spending col-lg-6">
+                    <canvas
+                      id="myChart"
+                      style="width: 100%; max-width: 600px"
+                    ></canvas>
+
+                    <script>
+                      var xValues = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];;
+                      var yValues = [55, 49, 44, 24, 15,44,55,67,56,34,65,22];
+                      var barColors = [
+                        "#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7","#BBD9E7"
+                      ];
+
+                      new Chart("myChart", {
+                        type: "bar",
+                        data: {
+                          labels: xValues,
+                          datasets: [
+                            {
+                              backgroundColor: barColors,
+                              data: yValues,
+                            },
+                          ],
+                        },
+                        options: {
+                          legend: { display: false },
+                          title: {
+                            display: true,
+                            text: "Time Spending 2020",
+                          },
+                        },
+                      });
+                    </script>
+                  </div>
+                  <div class="upcoming col-lg-6">this is upcoming</div>
+                </div>
+              </div>
+            </div>
+            <div class="course">
+              <div class="container-fluid">
                 <div class="row">
                   <div class="group col-lg-4">this is group</div>
-                  <div class="complete-course col-lg-4">this is complete course</div>
+                  <div class="complete-course col-lg-4">
+                    this is complete course
+                  </div>
                   <div class="notice-broad col-lg-4">this is notice-broad</div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>

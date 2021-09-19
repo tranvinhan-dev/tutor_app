@@ -1,7 +1,38 @@
 :root {
     --main-text-color:black; 
+    --inside-bg-color:#ECECEC;
+    --outside-bg-color:#F3F3F3;
 
   }
 div{
-      border:solid rgb(80, 80, 80) 0.5px;
+      /* border:solid rgb(80, 80, 80) 0.5px; */
+}
+body{
+    background-color:var(--outside-bg-color);
+}
+.main{
+    background-color:var(--inside-bg-color);
+}
+.img{
+    width:30px;
+    height: 30px ;
+}
+#profile{
+    border:none;
+    background-color:var(--outside-bg-color);
+}
+.overview-comp{
+    width:19%;
+    
+    background-color:var(--outside-bg-color);
+}
+.overview-comp-title{
+
+}
+.overview-comp-number{
+    font-size: 30px;
+    font-weight: bold;
+}
+.overview-comp-image{
+
 }
